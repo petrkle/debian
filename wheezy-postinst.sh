@@ -46,7 +46,7 @@ update-rc.d -f salt-minion remove
 
 echo 'file_client: local' > /etc/salt/minion
 
-echo 'testmachine: YES' > /etc/salt/grains
+echo 'testmachine: OK' > /etc/salt/grains
 
 mkdir /srv/salt /srv/pillar
 

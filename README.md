@@ -3,7 +3,7 @@ Debian preseed
 
 1. boot [Debian iso](https://www.debian.org/CD/netinst/)
 
-2. Press ESC and type: auto url=http://petr.kle.cz/debian/wheezy
+2. Press ESC and type: auto url=http://petr.kle.cz/debian/jessie
 
 3. Wait for installation end
 

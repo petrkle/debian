@@ -4,14 +4,14 @@
 set -e
 
 TMP=$HOME/tmp
-ISO=$TMP/debian-7.5.0-i386-netinst.iso
+ISO=$TMP/debian-8.0.0-i386-netinst.iso
 VMDIR=$TMP/virtual-box
 RAM=2048
 HDD=20000
 
 [ -d $VMDIR ] || mkdir -p $VMDIR
 
-[ -f $ISO ] || wget -O $ISO http://cdimage.debian.org/debian-cd/7.5.0/i386/iso-cd/debian-7.5.0-i386-netinst.iso
+[ -f $ISO ] || wget -O $ISO http://cdimage.debian.org/debian-cd/8.0.0/i386/iso-cd/debian-8.0.0-i386-netinst.iso
 
 [ -z "$1" ] && ID="debian-$RANDOM" || ID=$1
 

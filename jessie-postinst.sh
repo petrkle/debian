@@ -1,13 +1,14 @@
 #!/bin/bash
 
 NAME="server-$RANDOM"
-
-apt-get -y install git
+DOMAIN="example.com"
 
 apt-get -y remove nano vim-tiny systemd
 
-echo $NAME> /etc/hostname
-sed -i "s/^127\.0\.1\.1.*/127.0.1.1 $NAME/" /etc/hosts
+apt-get -y install git vim-nox
+
+echo "${NAME}.${DOMAIN}" > /etc/hostname
+sed -i "s/^127\.0\.1\.1.*/127.0.1.1 $NAME $NAME.$DOMAIN/" /etc/hosts
 
 sed -i "s/^%sudo.*/%sudo ALL=(ALL:ALL) NOPASSWD:ALL/" /etc/sudoers
 
@@ -58,5 +59,6 @@ chmod og-rwx /srv/salt /srv/pillar
 
 cat /etc/rc.local.my > /etc/rc.local
 rm /etc/rc.local.my
+shutdown -r -t 0
 exit 0
 END

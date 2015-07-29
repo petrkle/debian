@@ -4,14 +4,16 @@
 set -e
 
 TMP=$HOME/tmp
-ISO=$TMP/debian-7.5.0-i386-netinst.iso
+DEBIANVERSION=8.1.0
+DEBIANARCH=i386
+ISO=$TMP/debian-$DEBIANVERSION-$DEBIANARCH-netinst.iso
 VMDIR=$TMP/virtual-box
 RAM=2048
 HDD=20000
 
 [ -d $VMDIR ] || mkdir -p $VMDIR
 
-[ -f $ISO ] || wget -O $ISO http://cdimage.debian.org/debian-cd/7.5.0/i386/iso-cd/debian-7.5.0-i386-netinst.iso
+[ -f $ISO ] || wget -O $ISO http://cdimage.debian.org/debian-cd/$DEBIANVERSION/$DEBIANARCH/iso-cd/debian-$DEBIANVERSION-$DEBIANARCH-netinst.iso
 
 [ -z "$1" ] && ID="debian-$RANDOM" || ID=$1
 
